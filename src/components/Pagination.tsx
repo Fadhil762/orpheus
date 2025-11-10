@@ -8,7 +8,7 @@ export default function PaginationControls({
 }: {
   current: number
   last: number
-  onChange: (p: number) => void
+  onChange: (_page: number) => void
 }) {
-  return <Pagination page={current} count={Math.max(1, last)} onChange={(_, p) => onChange(p)} />
+  return <Pagination page={current} count={Math.max(1, last)} onChange={(e, page) => onChange(page)} />
 }

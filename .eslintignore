@@ -1,0 +1,9 @@
+node_modules
+dist
+.pnp.*
+coverage
+public
+.idea
+.vscode
+.DS_Store
+*.local

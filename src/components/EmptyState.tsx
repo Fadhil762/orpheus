@@ -10,7 +10,7 @@ export default function EmptyState() {
         No results
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mt: 1, maxWidth: 600, mx: 'auto' }}>
-        We couldn't find any anime matching that query. Try different keywords or remove filters.
+        We could not find any anime matching that query. Try different keywords or remove filters.
       </Typography>
       <Box sx={{ mt: 2 }}>
         <Button variant="contained" onClick={() => window.location.reload()}>

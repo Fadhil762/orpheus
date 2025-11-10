@@ -3,6 +3,7 @@ import { useParams, Link as RouterLink } from 'react-router-dom'
 import { Container, Typography, Box, CircularProgress, Grid, Chip, Button, Skeleton } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { fetchAnime } from './animeSlice'
+import type { Genre } from '../../api/jikan'
 
 export default function AnimeDetail() {
   const { id } = useParams<{ id: string }>()
@@ -36,7 +37,7 @@ export default function AnimeDetail() {
                     alt={`${data.title} cover`}
                     loading="lazy"
                     sx={{ width: '100%', borderRadius: 1 }}
-                    onLoad={(e: any) => {
+                    onLoad={(e: React.SyntheticEvent<HTMLImageElement>) => {
                       const img = e.currentTarget as HTMLImageElement
                       img.style.opacity = '1'
                     }}
@@ -60,7 +61,7 @@ export default function AnimeDetail() {
               <Box sx={{ mt: 2 }}>
                 <Typography variant="subtitle2">Genres</Typography>
                 <Box sx={{ mt: 1, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                  {data.genres.map((g: any) => (
+                  {data.genres.map((g: Genre) => (
                     <Chip key={g.mal_id ?? g.name} label={g.name} size="small" />
                   ))}
                 </Box>

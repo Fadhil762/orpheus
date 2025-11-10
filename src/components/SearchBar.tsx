@@ -3,7 +3,7 @@ import { TextField, Box } from '@mui/material'
 
 type Props = {
   value: string
-  onChange: (v: string) => void
+  onChange: (_: string) => void
 }
 
 export default function SearchBar({ value, onChange }: Props) {

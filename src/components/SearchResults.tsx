@@ -71,6 +71,8 @@ function ResultCard({ a }: { a: AnimeSummary }) {
                 WebkitLineClamp: 5,
                 WebkitBoxOrient: 'vertical',
                 overflow: 'hidden',
+                textAlign: 'justify',
+                textJustify: 'inter-word',
               }}
             >
               {a.synopsis ?? 'No description available.'}
@@ -78,7 +80,7 @@ function ResultCard({ a }: { a: AnimeSummary }) {
           )}
 
           <Collapse in={expanded} timeout={300} unmountOnExit>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               {a.synopsis ?? 'No description available.'}
             </Typography>
           </Collapse>

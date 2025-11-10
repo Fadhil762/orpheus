@@ -57,8 +57,7 @@ const slice = createSlice({
         state.loading = false
         // Ignore abort errors (user cancelled search) to avoid showing 'Aborted' to users
         const msg = action.error?.message ?? ''
-        const name = (action.error as any)?.name ?? ''
-        if (name === 'AbortError' || /abort(ed)?/i.test(msg)) {
+        if (/abort(ed)?/i.test(msg)) {
           state.error = null
         } else {
           state.error = msg || 'Error'
