@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Orpheus logo (original). Inspired by theatrical/musical motifs (mask + note)
+  — Created as an original vector emblem suitable for the app header.
+-->
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FF7043"/>
+    </linearGradient>
+  </defs>
+  <!-- circular frame -->
+  <circle cx="32" cy="32" r="30" fill="#0D47A1" />
+
+  <!-- inner ring -->
+  <circle cx="32" cy="32" r="24" fill="url(#g)" opacity="0.95" />
+
+  <!-- stylized theatrical mask (half) -->
+  <path d="M20 28 C22 20, 30 18, 34 22 C38 26, 36 34, 30 36 C24 38, 20 34, 20 28 Z" fill="#0D47A1"/>
+
+  <!-- eye cutouts -->
+  <ellipse cx="26.5" cy="28" rx="2.2" ry="1.8" fill="#FFD54F" />
+  <ellipse cx="32.5" cy="28.5" rx="2.2" ry="1.8" fill="#FFD54F" />
+
+  <!-- musical note integrated into mask (right) -->
+  <g transform="translate(38,16) scale(0.9)">
+    <rect x="6" y="6" width="3" height="18" rx="1.5" fill="#0D47A1" transform="rotate(-12 7.5 15)"/>
+    <circle cx="10" cy="26" r="4.5" fill="#0D47A1" />
+    <path d="M8 9 L20 5 L20 18" stroke="#0D47A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
