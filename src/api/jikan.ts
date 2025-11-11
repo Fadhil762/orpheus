@@ -1,7 +1,7 @@
 export type AnimeSummary = {
   mal_id: number
   title: string
-  images?: { jpg?: { image_url?: string } }
+  images?: ImageSet
   synopsis?: string
   episodes?: number
   score?: number
@@ -45,9 +45,12 @@ export type AnimeDetail = {
 
 const BASE = 'https://api.jikan.moe/v4'
 
-export async function searchAnime(query: string, page = 1, signal?: AbortSignal) {
+export const PAGE_SIZE = 8
+
+export async function searchAnime(query: string, page = 1, signal?: AbortSignal, limit = PAGE_SIZE) {
   const q = encodeURIComponent(query)
-  const res = await fetch(`${BASE}/anime?q=${q}&page=${page}`, { signal })
+  // Jikan supports a 'limit' query param to control items per page
+  const res = await fetch(`${BASE}/anime?q=${q}&page=${page}&limit=${limit}`, { signal })
   if (!res.ok) throw new Error(`API error ${res.status}`)
   const json: SearchResponse = await res.json()
   return json

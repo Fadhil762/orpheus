@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { searchAnime, AnimeSummary } from '../../api/jikan'
+import { searchAnime, AnimeSummary, PAGE_SIZE } from '../../api/jikan'
 
 type SearchState = {
   query: string
@@ -22,7 +22,7 @@ const initialState: SearchState = {
 export const fetchSearch = createAsyncThunk(
   'search/fetch',
   async ({ query, page }: { query: string; page: number }, thunkAPI) => {
-    const res = await searchAnime(query, page, thunkAPI.signal)
+    const res = await searchAnime(query, page, thunkAPI.signal, PAGE_SIZE)
     return { data: res.data, pagination: res.pagination }
   }
 )
